@@ -134,6 +134,6 @@ MEDIA_URL = '/media/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 ## login redirect
-LOGIN_REDIRECT_URL = '/_auth/login'
+LOGIN_REDIRECT_URL = '/'
 ## logout redirect
 LOGOUT_REDIRECT_URL = '/_auth/login'
