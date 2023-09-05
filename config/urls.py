@@ -17,7 +17,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+
+from lily import views
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('_auth/', include('_auth.urls')),
+    path('', views.index, name='index'),
 ]
