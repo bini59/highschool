@@ -1,3 +1,20 @@
 {% extends 'base.html' %}
 {% block content %}
+
+{% if postList %}
+    {% for post in postList %}
+        <div class="post">
+            <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+            <p class="meta">Posted by <a href="#">{{ post.author }}</a> on {{ post.date }}</p>
+            {% if post.image %}
+            <div class="image">
+                <img src="{{ post.image }}" alt="" />
+            </div>
+            {% endif %}
+            <div class="entry">
+                <p>{{ post.content }}</p>
+            </div>
+        </div>
+    {% endfor %}
+{% endif %}
 {% endblock %}
