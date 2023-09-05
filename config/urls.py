@@ -25,5 +25,6 @@ from lily import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('_auth/', include('_auth.urls')),
+    path('lily/', include('lily.urls')),
     path('', views.index, name='index'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
