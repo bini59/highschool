@@ -1,6 +1,12 @@
 {% extends 'base.html' %}
 {% block content %}
 <div class="container my-3">
+    {% if user.is_authenticated %}
+    <p>이미 로그인 되어 있습니다. {{ user.username }}</p>
+    <a href="{% url '_auth:logout' %}">로그아웃</a>
+    {% else %}
+    <h1>로그인</h1>
+    {% endif %}
     <form method="post" action="{% url '_auth:login' %}">
         {% csrf_token %}
         {% include "form_errors.html" %}
