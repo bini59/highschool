@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'lily.apps.LilyConfig',
     '_auth.apps.AuthConfig',
     'django.contrib.admin',
     'django.contrib.auth',
