@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block content %}
+<div id="carouselExampleControls" class="carousel carousel-dark slide" data-bs-ride="carousel" data-bs-interval="false">
+<div class="post__container carousel-inner"> 
+{% if postList %}
+    {% for post in postList %}
+        <div class="post carousel-item {% if forloop.first %}active{% endif %}">
+            <div class="post__info">
+                <span class="post__author">{{ post.author }}</span>
+                 • 
+                <span class="post__date">{{ post.created_at }}</span>
+            </div>
+            {% if post.image %}
+            <div class="post__image">
+                <img src="{{ post.image.url }}" alt="" />
+            </div>
+            {% endif %}
+            <div class="post__entry">
+                <div class="post__title">{{ post.title }}</div>
+                <p>{{ post.content }}</p>
+            </div>
+        </div>
+    {% endfor %}
+{% endif %}
+<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+</button>
+<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+</button>
+</div>
+</div>
+{% endblock %}
