@@ -2,6 +2,7 @@
 {% block content %}
 <form method="POST" action="{% url 'post' %}" enctype="multipart/form-data">
     {% csrf_token %}
+    {% include 'form_errors.html' %}
     <div class="form__container">
         <div class="form__image">
                 <div class="form__image__msg">
@@ -27,6 +28,8 @@
                 <input class="btn btn-primary" type="submit" value="작성" />
             </div>
         </div>
+        
     </div>
+    
 </form>
 {% endblock %}

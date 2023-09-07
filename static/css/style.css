@@ -73,7 +73,7 @@
 
 .form__container{
     width: 100%;
-    height: calc(100vh - 1rem - 40px);
+    height: calc(100vh - 3rem - 64px);
 
     display: flex;
     flex-direction: row;
