@@ -20,7 +20,8 @@ def post_POST(request):
         post.content = request.POST['content']
         post.author = request.user
         post.created_at = timezone.datetime.now()
-        post.image = request.FILES['image']
+        if request.FILES.get('image') is not None:
+            post.image = request.FILES['image']
         post.save()
         
         return redirect('/')
